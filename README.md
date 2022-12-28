@@ -1,7 +1,7 @@
 
 ![alt text](https://github.com/daniel-su1/java-wheel-of-fortune/blob/main/img/logoSplashScreen.png?raw=true)
 
-# Java Wheel of Fortune
+# Wheel of Fortune Java
 
 A translation of the popular Wheel Of Fortune gameshow as an HSA game in Java. Features the original soundtrack and sounds from the show, with a custom wheel!
 
