@@ -1,5 +1,4 @@
 // Daniel Su
-// Mr. Guglielmi
 //June 22, 2021
 //This program will play America's Game®, Wheel of Fortune. It features two game modes: Toss Up and Main Game. It reads and stores high score data in a text file.
 import java.awt.Color;
@@ -1191,7 +1190,7 @@ public class WheelOfFortune extends Thread {
 			p.playClip("wheelSpinning.wav");//play the wheel spinning sound effect
 			while (spinning) {
 
-				animatedWheel = ImageIO.read(new File("wheel (" + i + ").png"));//set the animated wheel variable to the loaded file that is one of the 240 pngs
+			animatedWheel = ImageIO.read(getClass().getResource("img/wheel (" + i + ").png"));//set the animated wheel variable to the loaded file that is one of the 240 pngs
 				c.drawImage(animatedWheel, 650, 60, null);//draw (i)th wheel in the sequence
 
 				//draw the arrow indicator
@@ -2113,7 +2112,7 @@ public class WheelOfFortune extends Thread {
 		boolean deleted = false;//boolean to store whether the player has deleted all the data or not
 
 		try {
-			background = ImageIO.read(new File("mainMenuBackground.png"));//read the png
+			background = ImageIO.read(getClass().getResource("/img/mainMenuBackground.png"));//read the png
 
 		} catch (Exception e) {
 
@@ -2428,7 +2427,7 @@ public class WheelOfFortune extends Thread {
 
 		///////////////////
 		try {
-			background = ImageIO.read(new File("mainMenuBackground.png"));//set the buffered image to the main menu background png
+			background = ImageIO.read(getClass().getResource("/img/mainMenuBackground.png"));//set the buffered image to the main menu background png
 
 		} catch (Exception e) {
 			new Message("File not found :(", "hmm");
@@ -2564,7 +2563,7 @@ public class WheelOfFortune extends Thread {
 		BufferedImage background = null;//background image
 
 		try {
-			background = ImageIO.read(new File("mainMenuBackground.png"));//read the background image from png file
+			background = ImageIO.read(getClass().getResource("/img/mainMenuBackground.png"));//read the background image from png file
 
 		} catch (Exception e) {
 		}
@@ -2637,7 +2636,7 @@ public class WheelOfFortune extends Thread {
 		BufferedImage background = null;//background image 
 
 		try {
-			background = ImageIO.read(new File("mainMenuBackground.png"));//read the background image from png file
+			background = ImageIO.read(getClass().getResource("/img/mainMenuBackground.png"));//read the background image from png file
 
 		} catch (Exception e) {
 			new Message("file not found","error");
