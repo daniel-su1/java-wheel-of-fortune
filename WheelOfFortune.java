@@ -61,7 +61,7 @@ public class WheelOfFortune extends Thread {
 		c.setColor(new Color(0, 2, 29));// dark navy blue
 		try {
 			BufferedImage someImage;// buffered image
-			someImage = ImageIO.read(new File("logoSplashScreen.png"));// splash screen png stored in variable someImage
+			someImage = ImageIO.read(getClass().getResource("img/logoSplashScreen.png"));// splash screen png stored in variable someImage
 			int down = 1;// variable to make the image go down
 
 			for (int i = 1; i < 350; i += (100 / down)) {// loop to draw the navy blue background and image on top 350
@@ -131,8 +131,8 @@ public class WheelOfFortune extends Thread {
 		BufferedImage logo = null;// logo image
 
 		try {
-			background = ImageIO.read(new File("mainMenuBackground.png"));
-			logo = ImageIO.read(new File("logo.png"));
+			background = ImageIO.read(getClass().getResource("/img/mainMenuBackground.png"));
+			logo = ImageIO.read(getClass().getResource("/img/logo.png"));
 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -205,7 +205,7 @@ public class WheelOfFortune extends Thread {
 
 	public void playerInfo() {// method for getting the player names
 		try {
-			BufferedImage someImage = ImageIO.read(new File("playerInfo.png"));// load the image of the 3 contestants
+			BufferedImage someImage = ImageIO.read(getClass().getResource("/img/playerInfo.png"));// load the image of the 3 contestants
 			c.drawImage(someImage, 0, 0, null);// draws the image
 		} catch (IOException e) {
 			new Message("File not found :(", "hmm");
@@ -218,7 +218,7 @@ public class WheelOfFortune extends Thread {
 
 		// load and draw the first highlighted player image
 		try {
-			BufferedImage someImage = ImageIO.read(new File("playerInfoPlayer1.png"));
+			BufferedImage someImage = ImageIO.read(getClass().getResource("/img/playerInfoPlayer1.png"));
 			c.drawImage(someImage, 0, 0, null);
 		} catch (IOException e) {
 			new Message("File not found :(", "hmm");
@@ -243,7 +243,7 @@ public class WheelOfFortune extends Thread {
 
 		// load and draw the second highlighted player image
 		try {
-			BufferedImage someImage = ImageIO.read(new File("playerInfoPlayer2.png"));
+			BufferedImage someImage = ImageIO.read(getClass().getResource("/img/playerInfoPlayer2.png"));
 			c.drawImage(someImage, 0, 0, null);
 		} catch (IOException e) {
 			new Message("File not found :(", "hmm");
@@ -269,7 +269,7 @@ public class WheelOfFortune extends Thread {
 
 		// load and draw the third highlighted player image
 		try {
-			BufferedImage someImage = ImageIO.read(new File("playerInfoPlayer3.png"));
+			BufferedImage someImage = ImageIO.read(getClass().getResource("/img/playerInfoPlayer3.png"));
 			c.drawImage(someImage, 0, 0, null);
 		} catch (IOException e) {
 			new Message("File not found :(", "hmm");
@@ -1151,7 +1151,7 @@ public class WheelOfFortune extends Thread {
 		int startingPosition = (int) (Math.random() * 240 + 1);//randomly select a starting position
 		BufferedImage staticWheel;//staticWheel picture to display before the user spins the wheel
 		try {
-			staticWheel = ImageIO.read(new File("wheel (" + startingPosition + ").png"));
+			staticWheel = ImageIO.read(getClass().getResource("img/wheel (" + startingPosition + ").png"));
 			c.drawImage(staticWheel, 650, 60, null);//draw the static wheel
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
@@ -2485,9 +2485,9 @@ public class WheelOfFortune extends Thread {
 		mainMenu();//go back to main menu
 	}
 
-	private void emptyGameBoard() {//this method will draw the empty game board		
+	private void emptyGameBoard() {//this method will draw the empty game board             
 		try {
-			BufferedImage someImage = ImageIO.read(new File("gameBackground.png"));//load image from png file
+			BufferedImage someImage = ImageIO.read(getClass().getResource("img/gameBackground.png"));//load image from png file
 			c.drawImage(someImage, 0, 0, null);//draw the game background
 		} catch (IOException e) {
 			new Message("File not found :(", "hmm");

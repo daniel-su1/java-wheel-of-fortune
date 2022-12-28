@@ -23,26 +23,26 @@ public class PlayAudio extends Thread{
 	{
 	    try {
 			AudioInputStream ais = AudioSystem
-					.getAudioInputStream(new File(fileName));//read audio file
+					.getAudioInputStream(getClass().getResource("sound/" + fileName));//read audio file
 
-	        DataLine.Info dataInfo = new DataLine.Info(Clip.class, ais.getFormat());//get the format of the audio file
+		DataLine.Info dataInfo = new DataLine.Info(Clip.class, ais.getFormat());//get the format of the audio file
 
-	        if (AudioSystem.isLineSupported(dataInfo)) {
-	            clip = (Clip)AudioSystem.getLine(dataInfo);//initialize the clip
-	            clip.open(ais);//open the audio file
-	            clip.start();//start playing the clip
-             
-	        }
+		if (AudioSystem.isLineSupported(dataInfo)) {
+		    clip = (Clip)AudioSystem.getLine(dataInfo);//initialize the clip
+		    clip.open(ais);//open the audio file
+		    clip.start();//start playing the clip
+	     
+		}
 	    }
 	    catch (Exception e) {
-	        e.printStackTrace();
+		e.printStackTrace();
 	    }
 	}
 	public void play(String fileName) {//method for streaming the data from a larger audio file
 		try {
 			
 			AudioInputStream ais = AudioSystem
-					.getAudioInputStream(new File(fileName));//read audio file
+					.getAudioInputStream(getClass().getResource("sound/" + fileName));//read audio file
 			
 			DataLine.Info dataLineInfo = new DataLine.Info(SourceDataLine.class, ais.getFormat());//get the format
 			
